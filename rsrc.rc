@@ -1,0 +1,54 @@
+#include "e:\masm32\include\resource.h"
+
+;################################################################################
+
+
+#define  ID_SLIDER_OXIGEN 201
+#define  ID_SLIDER_NOISE 202
+#define  ID_SLIDER_DUST 203
+
+
+#define  ID_EDIT_OXIGEN 501
+#define  ID_EDIT_NOISE 502
+#define  ID_EDIT_DUST 503
+
+#define ID_LABEL_OXIGEN 601
+#define ID_LABEL_DUST 602
+#define ID_LABEL_NOISE 603
+
+
+#define  ID_STATIC -1
+
+;################################################################################
+
+CONTROLS DIALOGEX 0, 0, 310, 199
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "MASM Virtual Sensor"
+FONT 8, "MS Sans Serif"
+BEGIN
+	CONTROL         "OxigenSensor", ID_SLIDER_OXIGEN, "msctls_trackbar32", TBS_VERT |
+                    TBS_TOP | WS_BORDER | WS_TABSTOP,20,20,30,100,
+                    WS_EX_DLGMODALFRAME | WS_EX_CLIENTEDGE
+	CONTROL         "DustSensor", ID_SLIDER_DUST, "msctls_trackbar32", TBS_VERT |
+					TBS_TOP | WS_BORDER | WS_TABSTOP, 60, 20, 30, 100,
+					WS_EX_DLGMODALFRAME | WS_EX_CLIENTEDGE
+	CONTROL         "NoiseSensor", ID_SLIDER_NOISE, "msctls_trackbar32", TBS_VERT |
+					TBS_TOP | WS_BORDER | WS_TABSTOP, 100, 20, 30, 100,
+					WS_EX_DLGMODALFRAME | WS_EX_CLIENTEDGE
+   
+    EDITTEXT        ID_EDIT_OXIGEN,20,130,30,10,ES_CENTER | ES_NUMBER | NOT 
+                    WS_BORDER,WS_EX_CLIENTEDGE
+	EDITTEXT        ID_EDIT_DUST, 60, 130, 30, 10, ES_CENTER | ES_NUMBER | NOT
+					WS_BORDER, WS_EX_CLIENTEDGE
+	EDITTEXT        ID_EDIT_NOISE, 100, 130, 30, 10, ES_CENTER | ES_NUMBER | NOT
+					WS_BORDER, WS_EX_CLIENTEDGE
+	CTEXT           "Oxigen",
+					ID_LABEL_OXIGEN, 20, 5, 30, 15, SS_SUNKEN | WS_BORDER
+	CTEXT           "Dust",
+					ID_LABEL_DUST, 60, 5, 30, 15, SS_SUNKEN | WS_BORDER
+	CTEXT           "Noise",
+					ID_LABEL_NOISE, 100, 5, 30, 15, SS_SUNKEN | WS_BORDER
+END
+
+;####################################################################################
+
